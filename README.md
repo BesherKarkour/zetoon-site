@@ -1,43 +1,32 @@
-# Astro Starter Kit: Minimal
+# zetoon.dev
+
+Marketing site for [Zetoon](https://zetoon.dev) apps: [Masbaha](https://zetoon.dev/masbaha/),
+[ChromaShift](https://zetoon.dev/chromashift/), and [MyMemoryCards](https://zetoon.dev/mymemorycards/).
+
+Built with [Astro](https://astro.build) (static output, zero client JS). Deployed on Netlify —
+every push to `main` triggers a build (`npm run build`, publish `dist/`, see `netlify.toml`).
+
+## Development
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
+npm run dev       # dev server at localhost:4321
+npm run build     # production build to dist/
+npm run preview   # serve the production build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Structure
 
-## 🚀 Project Structure
+- `src/data/apps.ts` — one record per app (name, tagline, features, store links, status).
+  Adding an app = one entry here + one page under `src/pages/`.
+- `src/layouts/Base.astro` — shared shell (head/meta/OG, header, footer).
+- `src/components/AppPage.astro` — renders a full app page from an `AppInfo` record.
+- `src/styles/global.css` — design system: olive palette, automatic light/dark,
+  RTL-safe logical properties (Arabic can be added without layout rework).
+- `public/app-ads.txt` — required by AdMob; must stay at the site root.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Notes
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Canonical domain is set in `astro.config.mjs` (`SITE_URL`).
+- Domain is registered at Cloudflare Registrar; DNS records (grey-cloud CNAMEs)
+  point at Netlify. Nameservers must stay with Cloudflare.
