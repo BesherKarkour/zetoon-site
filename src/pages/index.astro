@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import AppCard from '../components/AppCard.astro';
+import { apps } from '../data/apps';
+---
+
+<Base
+  title="Zetoon — Thoughtfully crafted mobile apps"
+  description="Zetoon is an independent app studio building focused, beautifully crafted mobile apps: Masbaha, ChromaShift, and MyMemoryCards."
+>
+  <div class="container">
+    <section class="hero">
+      <h1>Thoughtfully crafted mobile apps</h1>
+      <p class="lede">
+        Zetoon is an independent studio building small, focused apps that do one
+        thing beautifully — from digital prayer beads with real physics to
+        AI-powered language learning.
+      </p>
+    </section>
+
+    <section id="apps" class="block">
+      <h2>Our apps</h2>
+      <div class="card-grid">
+        {apps.map((app) => <AppCard app={app} />)}
+      </div>
+    </section>
+  </div>
+</Base>

@@ -1,0 +1,14 @@
+---
+import AppPage from '../../components/AppPage.astro';
+import { getApp } from '../../data/apps';
+---
+
+<AppPage app={getApp('masbaha')}>
+  <section class="block" style="text-align:center;">
+    <p class="muted small">
+      <a href="/masbaha/privacy/">Privacy policy</a>
+      &nbsp;·&nbsp;
+      <a href="/support/">Support</a>
+    </p>
+  </section>
+</AppPage>

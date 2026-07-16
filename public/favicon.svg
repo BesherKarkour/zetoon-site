@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+    <!-- Olive leaf-drop: the Zetoon brand mark -->
+    <path d="M64 12C36 40 24 62 24 82a40 40 0 0 0 80 0c0-20-12-42-40-70Z" fill="#5f7a2e"/>
+    <circle cx="64" cy="82" r="18" fill="#8aa84e"/>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            path { fill: #a3c163; }
+            circle { fill: #6b8433; }
+        }
+    </style>
+</svg>

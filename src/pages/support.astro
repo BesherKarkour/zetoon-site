@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { apps, SUPPORT_EMAIL } from '../data/apps';
+---
+
+<Base
+  title="Support — Zetoon"
+  description="Get help with Zetoon apps: Masbaha, ChromaShift, and MyMemoryCards. Contact us by email — we read everything."
+>
+  <div class="container">
+    <article class="prose">
+      <h1>Support</h1>
+      <p>
+        Questions, bug reports, or ideas for any Zetoon app? Email us — we read
+        everything and usually reply within a few days.
+      </p>
+      <p style="margin-block: 1.5rem;">
+        <a class="button" href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+      </p>
+      <p class="muted small">
+        Please mention which app ({apps.map((a) => a.name).join(', ')}) and, if
+        reporting a bug, your device model and what you expected to happen.
+      </p>
+
+      <h2>Privacy</h2>
+      <ul>
+        <li><a href="/masbaha/privacy/">Masbaha privacy policy</a></li>
+      </ul>
+    </article>
+  </div>
+</Base>

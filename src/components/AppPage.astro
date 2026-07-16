@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import type { AppInfo } from '../data/apps';
+
+interface Props {
+  app: AppInfo;
+}
+
+const { app } = Astro.props;
+---
+
+<Base
+  title={`${app.name} — ${app.tagline}`}
+  description={app.description}
+  ogImage={app.icon}
+>
+  <div class="container">
+    <section class="app-hero">
+      <img class="app-icon" src={app.icon} alt={`${app.name} app icon`} width="128" height="128" />
+      <h1>{app.name}</h1>
+      <p class="lede">{app.tagline}</p>
+
+      {
+        app.status === 'live' && app.playUrl ? (
+          <div class="store-badges">
+            <a href={app.playUrl}>
+              <img
+                src="/images/google-play-badge.png"
+                alt="Get it on Google Play"
+                height="60"
+                width="155"
+              />
+            </a>
+          </div>
+        ) : (
+          <span class="status-pill">{app.statusLabel}</span>
+        )
+      }
+    </section>
+
+    <section class="block">
+      <p class="lede" style="text-align:center; max-width: 42rem; margin-inline:auto;">
+        {app.description}
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        {
+          app.features.map((f) => (
+            <div class="feature">
+              <span class="emoji">{f.emoji}</span>
+              <h3>{f.title}</h3>
+              <p>{f.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <slot />
+  </div>
+</Base>

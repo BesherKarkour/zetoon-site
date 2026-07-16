@@ -1,0 +1,16 @@
+---
+import type { AppInfo } from '../data/apps';
+
+interface Props {
+  app: AppInfo;
+}
+
+const { app } = Astro.props;
+---
+
+<a class="app-card" href={`/${app.slug}/`}>
+  <img src={app.icon} alt={`${app.name} app icon`} width="64" height="64" loading="lazy" />
+  <h3>{app.name}</h3>
+  <p>{app.tagline}</p>
+  <span class="status-pill">{app.statusLabel}</span>
+</a>

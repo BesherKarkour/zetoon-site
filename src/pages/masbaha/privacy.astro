@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SUPPORT_EMAIL } from '../../data/apps';
+---
+
+<Base
+  title="Masbaha — Privacy Policy"
+  description="Privacy policy for the Masbaha app: no personal data collected; all data stays on your device."
+>
+  <div class="container">
+    <article class="prose">
+      <h1>Privacy Policy</h1>
+      <p class="muted small">Last updated: February 22, 2026</p>
+
+      <p>
+        We built the <strong>Masbaha</strong> app as a free, ad-supported
+        application. This page informs you of our policies regarding the
+        collection, use, and disclosure of information when you use our app.
+      </p>
+
+      <h2>Information We Collect</h2>
+      <p>
+        Masbaha does <strong>not</strong> collect, store, or transmit any
+        personal information. The app does not require an account, login, or
+        any form of registration.
+      </p>
+
+      <h2>Local Data Storage</h2>
+      <p>The app stores the following data locally on your device only:</p>
+      <ul>
+        <li>Bead counter value</li>
+        <li>Tasbeeh plans and progress</li>
+        <li>App settings and preferences (sound, vibration, trigger level, background image)</li>
+        <li>Daily reminder times</li>
+      </ul>
+      <p>
+        This data is stored using your device's local storage and is never sent
+        to any server. You can clear this data at any time by clearing the
+        app's data or uninstalling the app.
+      </p>
+
+      <h2>Third-Party Services</h2>
+      <p>The app uses the following third-party services that may collect information:</p>
+
+      <h3>Google AdMob</h3>
+      <p>
+        We use Google AdMob to display advertisements. AdMob may collect and
+        use data to serve personalized or non-personalized ads. This may
+        include:
+      </p>
+      <ul>
+        <li>Device identifiers</li>
+        <li>IP address</li>
+        <li>Usage data</li>
+      </ul>
+      <p>
+        For more information on how Google uses data, please visit:
+        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">
+          Google Advertising Privacy Policy</a>
+      </p>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        Our app does not knowingly collect personal information from children.
+        Since we do not collect any personal data, the app is safe for users of
+        all ages.
+      </p>
+
+      <h2>Permissions</h2>
+      <p>The app may request the following permissions:</p>
+      <ul>
+        <li><strong>Vibration</strong> — to provide haptic feedback when counting beads</li>
+        <li><strong>Internet</strong> — required for displaying advertisements</li>
+        <li><strong>Notifications</strong> — for daily tasbeeh reminders (optional)</li>
+        <li><strong>Photo library</strong> — to select a custom background image (optional)</li>
+      </ul>
+
+      <h2>Data Deletion</h2>
+      <p>All app data is stored locally on your device. You can delete all data at any time by:</p>
+      <ul>
+        <li>Going to your device's <strong>Settings → Apps → Masbaha → Clear Data</strong></li>
+        <li>Uninstalling the app</li>
+      </ul>
+      <p>
+        Since we do not store any data on external servers, no further action
+        is needed to delete your information.
+      </p>
+
+      <h2>Changes to This Privacy Policy</h2>
+      <p>
+        We may update this privacy policy from time to time. Any changes will
+        be reflected on this page with an updated date.
+      </p>
+
+      <h2>Contact Us</h2>
+      <p>If you have any questions about this privacy policy, please contact us at:</p>
+      <p><a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a></p>
+    </article>
+  </div>
+</Base>
