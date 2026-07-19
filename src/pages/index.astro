@@ -2,11 +2,20 @@
 import Base from '../layouts/Base.astro';
 import AppCard from '../components/AppCard.astro';
 import { apps } from '../data/apps';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Zetoon',
+  url: new URL('/', Astro.site).href,
+  logo: new URL('/images/zetoon-logo.png', Astro.site).href,
+};
 ---
 
 <Base
   title="Zetoon — Thoughtfully crafted mobile apps"
   description="Zetoon is an independent app studio building focused, beautifully crafted mobile apps: Masbaha, ChromaShift, and MyMemoryCards."
+  schema={schema}
 >
   <div class="container">
     <section class="hero">

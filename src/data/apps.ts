@@ -12,6 +12,8 @@ export interface AppInfo {
   tagline: string;
   description: string;
   icon: string;
+  /** schema.org applicationCategory, e.g. LifestyleApplication */
+  category: string;
   status: AppStatus;
   statusLabel: string;
   playUrl?: string;
@@ -27,6 +29,7 @@ export const apps: AppInfo[] = [
     description:
       'Masbaha digitises the traditional tasbih experience. Instead of a plain tap counter, a bead hangs from a fiber string — drag it down, release, and a tuned spring simulation snaps it back. Every valid release advances your dhikr counter with a click and a gentle vibration, just like the real thing.',
     icon: '/images/masbaha-icon.png',
+    category: 'LifestyleApplication',
     status: 'live',
     statusLabel: 'Available on Google Play',
     playUrl: 'https://play.google.com/store/apps/details?id=com.zetoon.masbaha',
@@ -70,6 +73,7 @@ export const apps: AppInfo[] = [
     description:
       'Slide same-colored candies together to climb the color tiers, and land the right color on every target square before you run out of moves. Familiar 2048 sliding — but merging is driven by color, wrapped in a glossy candy look.',
     icon: '/images/chromashift-icon.png',
+    category: 'GameApplication',
     status: 'coming-soon',
     statusLabel: 'Coming soon',
     features: [
@@ -102,6 +106,7 @@ export const apps: AppInfo[] = [
     description:
       'Upload a book or document in the language you are learning, and an AI pipeline extracts the vocabulary worth knowing — together with the real sentences it appears in — and turns it into flip cards, chapter by chapter, translated into your language.',
     icon: '/images/mymemorycards-icon.svg',
+    category: 'EducationalApplication',
     status: 'in-development',
     statusLabel: 'In development',
     features: [
