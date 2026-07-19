@@ -6,6 +6,11 @@ export interface Feature {
   text: string;
 }
 
+export interface Faq {
+  q: string;
+  a: string;
+}
+
 export interface AppInfo {
   slug: string;
   name: string;
@@ -19,6 +24,7 @@ export interface AppInfo {
   playUrl?: string;
   appStoreUrl?: string;
   features: Feature[];
+  faqs: Faq[];
 }
 
 export const apps: AppInfo[] = [
@@ -65,6 +71,36 @@ export const apps: AppInfo[] = [
         text: 'Full localization including right-to-left Arabic and Urdu.',
       },
     ],
+    faqs: [
+      {
+        q: 'Is Masbaha free?',
+        a: 'Yes. Masbaha is free to download and use, supported by a small banner ad. Optional bead designs — country flags rendered as 3D glass globes and four handcrafted Islamic jewel beads — are available as one-time purchases on Google Play. The classic bead and the Palestine flag design are free for everyone.',
+      },
+      {
+        q: 'How is Masbaha different from other tasbih counter apps?',
+        a: 'Most digital tasbih apps are simple tap counters. Masbaha renders a real bead hanging on a string: you drag it down, release it, and a tuned spring simulation snaps it back with a click and a gentle vibration. Counting dhikr feels like using physical prayer beads, not pressing a button.',
+      },
+      {
+        q: 'What are tasbeeh plans?',
+        a: 'A tasbeeh plan is an ordered sequence of dhikr phrases, each with its own target count, that advances automatically as you complete each phrase. The built-in default is the classic post-prayer tasbeeh — 33× SubhanAllah, 33× Alhamdulillah, 33× Allahu Akbar — and you can create and edit your own plans.',
+      },
+      {
+        q: 'Does Masbaha work offline?',
+        a: 'Yes. There is no account and no backend — your counter, plans, and settings are stored on your device, and all bead designs are bundled with the app, so nothing about counting dhikr needs a connection.',
+      },
+      {
+        q: 'Can Masbaha remind me to do dhikr?',
+        a: 'Yes. You can schedule up to five daily reminder notifications at times you choose, so your dhikr routine never slips.',
+      },
+      {
+        q: 'Which languages does Masbaha support?',
+        a: 'Eight languages: English, Arabic, Turkish, Urdu, Indonesian, Malay, French, and Bengali — including full right-to-left layouts for Arabic and Urdu. The app follows your device language automatically.',
+      },
+      {
+        q: 'Is Masbaha available for iPhone?',
+        a: 'Masbaha is currently available for Android on Google Play. An iOS version is planned — check back here for updates.',
+      },
+    ],
   },
   {
     slug: 'chromashift',
@@ -98,6 +134,20 @@ export const apps: AppInfo[] = [
         text: 'A bright, tactile visual style that makes every merge feel delicious.',
       },
     ],
+    faqs: [
+      {
+        q: 'How is ChromaShift different from 2048?',
+        a: 'The swipe-to-slide feel is familiar, but merging is driven by color instead of numbers: two same-colored candies collide and merge into the next color tier. On top of that, each level has target squares and a move limit, so you are solving a hand-designed puzzle rather than chasing an endless high score.',
+      },
+      {
+        q: 'How do levels work?',
+        a: 'Each level defines target squares on the board. Land a candy of the matching color on a target to eliminate it, and clear every target before you run out of moves to complete the level.',
+      },
+      {
+        q: 'When will ChromaShift be released?',
+        a: 'ChromaShift is coming soon to Google Play. Check back on this page — the store badge will appear here as soon as it is live.',
+      },
+    ],
   },
   {
     slug: 'mymemorycards',
@@ -129,6 +179,24 @@ export const apps: AppInfo[] = [
         emoji: '🔁',
         title: 'Simple flip cards',
         text: 'Word and real sentence on the front; translation and definition on the back.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'How does MyMemoryCards create flashcards?',
+        a: 'You upload a book or document in the language you are learning, and an AI pipeline reads it chapter by chapter, picks out the vocabulary worth knowing, and turns each word into a flip card together with the original sentence it appeared in — translated into your language.',
+      },
+      {
+        q: 'Which file formats are supported?',
+        a: 'PDF, EPUB, and DOCX, in any language. Whatever you are already reading can become your study material.',
+      },
+      {
+        q: 'Why learn vocabulary from my own books instead of word lists?',
+        a: 'Words stick better with context you care about. Every card comes from a real sentence in a book you chose, and decks mirror the book chapter by chapter, so studying and reading reinforce each other instead of competing for your time.',
+      },
+      {
+        q: 'When will MyMemoryCards be available?',
+        a: 'MyMemoryCards is currently in development. Check back on this page for release news.',
       },
     ],
   },

@@ -8,7 +8,7 @@ interface Props {
 
 const { app } = Astro.props;
 
-const schema = {
+const appSchema = {
   '@context': 'https://schema.org',
   '@type': 'MobileApplication',
   name: app.name,
@@ -29,6 +29,18 @@ const schema = {
       }
     : {}),
 };
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: app.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const schema = app.faqs.length > 0 ? [appSchema, faqSchema] : appSchema;
 ---
 
 <Base
@@ -81,6 +93,22 @@ const schema = {
         }
       </div>
     </section>
+
+    {
+      app.faqs.length > 0 && (
+        <section class="block">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list">
+            {app.faqs.map((f) => (
+              <details class="faq">
+                <summary>{f.q}</summary>
+                <p>{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <slot />
   </div>
